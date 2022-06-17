@@ -31,6 +31,6 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           context: .
-          file: ./docker/dockerfile
+          file: ./docker/dockerfile-alpine
           push: true
           tags: sola97/uptime-kuma:latest
