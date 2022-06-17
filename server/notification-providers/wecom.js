@@ -16,7 +16,7 @@ class WeCom extends NotificationProvider {
                     "Content-Type": "application/json"
                 }
             };
-            let body = this.composeMessage(heartbeatJSON, msg);
+            let body = this.composeMessage(notification, heartbeatJSON, msg);
             await axios.post(WeComUrl, body, config);
             return okMsg;
         } catch (error) {
@@ -30,7 +30,7 @@ class WeCom extends NotificationProvider {
      * @param {string} msg General message
      * @returns {Object}
      */
-    composeMessage(heartbeatJSON, msg) {
+    composeMessage(notification, heartbeatJSON, msg) {
         let title;
         if (msg != null && heartbeatJSON != null && heartbeatJSON["status"] === UP) {
             title = "UptimeKuma Monitor Up";
