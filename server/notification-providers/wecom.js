@@ -10,7 +10,7 @@ class WeCom extends NotificationProvider {
         let okMsg = "Sent Successfully.";
 
         try {
-            let WeComUrl = "https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=" + notification.weComBotKey;
+            let WeComUrl = "https://wecomchan.sora.vip:51443/wecomchan";
             let config = {
                 headers: {
                     "Content-Type": "application/json"
@@ -42,10 +42,9 @@ class WeCom extends NotificationProvider {
             title = "UptimeKuma Message";
         }
         return {
-            msgtype: "text",
-            text: {
-                content: title + msg
-            }
+            msg_type: "text",
+            msg: title + msg,
+            sendkey: notification.weComBotKey
         };
     }
 }
