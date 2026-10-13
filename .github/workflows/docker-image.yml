@@ -34,3 +34,5 @@ jobs:
           file: ./docker/dockerfile
           push: true
           tags: sola97/uptime-kuma:latest
+        env:
+          DOCKER_BUILD_RECORD_UPLOAD: 'false'
